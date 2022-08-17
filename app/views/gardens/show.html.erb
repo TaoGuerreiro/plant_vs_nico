@@ -1,11 +1,11 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @garden.banner_url %>');">
+<div class="banner mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @garden.banner_url %>');">
   <div class="container">
     <h1><%= @garden.name %></h1>
   </div>
 </div>
 
 
-<div class="container">
+<div class="container mb-3">
   <div class="cards">
     <% @plants.each do |plant| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= plant.image_url %>)">
@@ -15,10 +15,10 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container mb-5">
   <%= simple_form_for [@garden, @plant] do |field| %>
-    <%= field.input :name  %>
-    <%= field.input :image_url %>
+    <%= field.input :name, placeholder: "Sapin, Palmier, etc." %>
+    <%= field.input :image_url, placeholder: "http://image...." %>
     <%= field.submit  %>
   <% end %>
 </div>
